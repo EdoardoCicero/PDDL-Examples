@@ -4,14 +4,16 @@
 	    truck1 truck2 - truck
 		gas_station1 - gas_station
 		foundry1 - foundry
-		airport1 - airport
+		
 		iron1 - iron
 		iron_ingot1 - iron_ingot
 		iron_site1 - iron_site
 		garage1 garage2 - garage
-		city1 city2 city3 - city
+		city1 city2 city3 city3 - city
+		airport1 - airport
 		plane1 plane2 - plane
 		cross1 - cross
+
 
 	)
 
@@ -22,12 +24,13 @@
 		(connected cross1 foundry1) (connected foundry1 cross1) (connected foundry1 garage2) (connected garage2 foundry1)
 		(connected garage2 gas_station1) (connected gas_station1 garage2) (connected gas_station1 airport1) (connected airport1 gas_station1)
 		(connected garage2 airport1) (connected airport1 garage2)
-		(connected airport1 city1) (connected airport1 city2) (connected airport1 city3)
 		
 
+		(can_reach city1 airport1) (can_reach city2 airport1) (can_reach city3 airport1)
+        (can_reach airport1 city1) (can_reach airport1 city2) (can_reach airport1 city2)
 		
 		(= (total-cost) 0)
-		(= (capacity truck1) 50)
+		(= (capacity truck1) 100)
 		(= (capacity truck2) 100)
 		(= (fuel truck1) 100)
 		(= (fuel truck2) 100)
@@ -42,19 +45,19 @@
 		(= (obj_in_place iron1 city3) 0)
 		(= (obj_in_place iron1 airport1) 0)
 		(= (obj_in_place iron1 foundry1) 0)
-		(= (obj_in_place iron1 iron_site1) 100)
-		(= (obj_in_place iron_site1 city1) 0)
-		(= (obj_in_place iron_site1 city2) 0)
-		(= (obj_in_place iron_site1 city3) 0)
-		(= (obj_in_place iron_site1 airport1) 0)
-		(= (obj_in_place iron_site1 foundry1) 0)
-		(= (obj_in_place iron_site1 iron_site1) 0)
+		(= (obj_in_place iron1 iron_site1) 0)
+		(= (obj_in_place iron_ingot1 city1) 0)
+		(= (obj_in_place iron_ingot1 city2) 0)
+		(= (obj_in_place iron_ingot1 city3) 0)
+		(= (obj_in_place iron_ingot1 airport1) 0)
+		(= (obj_in_place iron_ingot1 foundry1) 0)
+		(= (obj_in_place iron_ingot1 iron_site1) 0)
 
     
 		
 	) 
 
-	(:goal (and (= (obj_in_place iron1 city1) 100)))
+	(:goal (and (in plane1 city1)(delivered iron1) ))
 		
 
 )
