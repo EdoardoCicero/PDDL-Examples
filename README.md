@@ -11,11 +11,11 @@ The features highlighted are those that i cuould test through two planners:
 
 
 ### Market problem  
-  - Description: A robot has to walk accross the market to help people, fix broken freezers and turn on lights when needed.
+Description: A robot has to walk accross the market to help people, fix broken freezers and turn on lights when needed.
 
   - **Problem features**: strips
 
-  - Note: Simple problem in closed world assumption where everything set in the init is true, everything not set is false; different predicates are used to identify the different objects like robot, customer ecc...
+Note: Simple problem in closed world assumption where everything set in the init is true, everything not set is false; different predicates are used to identify the different objects like robot, customer ecc...
 	that are used in the preconditions of the actions.
 
 
