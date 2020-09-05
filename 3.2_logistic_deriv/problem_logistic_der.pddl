@@ -31,11 +31,16 @@
 		(is_site iron_site1)
 		
 		(obj_in_place iron1 iron_site1)
+
+		(= (total-cost) 0)
+		(= (drive-cost) 10)
+    	(= (load-unload-cost) 2)
+    	(= (fly-cost) 20)
 		    
 		
 	) 
     
-	(:goal (and (delivered iron_ingot1)))
+	(:goal (and (delivered iron_ingot1) (delivered iron_ingot2) (delivered iron_ingot3)))
 		
 
 )

@@ -1,5 +1,5 @@
 (define (domain logistic-domain)
-	(:requirements :adl :typing :conditional-effects :universal-preconditions)
+	(:requirements :strips :typing :conditional-effects :universal-preconditions :action-costs)
 	(:types
         iron_site
 		city - airport

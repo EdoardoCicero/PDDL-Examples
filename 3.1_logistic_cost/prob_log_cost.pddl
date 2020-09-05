@@ -42,7 +42,7 @@
     
 		
 	) 
-    (:metric maximize (total-cost))
+   
 	(:goal (and (delivered iron_ingot1) (delivered iron_ingot2) (delivered iron_ingot3)))
 		
 

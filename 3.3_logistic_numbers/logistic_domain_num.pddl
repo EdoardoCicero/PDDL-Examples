@@ -1,5 +1,5 @@
 (define (domain logistic-domain)
-	(:requirements :adl)
+	(:requirements :adl :typing :conditional-effects :universal-preconditions :action-costs :derived-predicates)
 	(:types
 		truck
 		plane

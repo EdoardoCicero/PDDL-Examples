@@ -67,4 +67,11 @@ _Description_: Similar to logistic problem
 
 _Note_: Unfortunatly i could not test this example because the feature i implemented, numerical fluents, was not supported by the planners i tried,
 	and so the problem and domain files surely have mistakes to fix, but i wanted to add it to the list because it was the first logistic problem i wrote.
+
+
+
+
+##How to run
+You can use fast downward following the instructions from the site above or use pddl solver through planner.py.
+In console "python ./planner.py path_to_domain.pddl path_to_problem.pddl"
 	
