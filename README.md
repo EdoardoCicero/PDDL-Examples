@@ -14,6 +14,7 @@ The features highlighted are those that i cuould test through two planners:
   Description: A robot has to walk accross the market to help people, fix broken freezers and turn on lights when needed.
 
   - Problem features: strips
+
   Note: Simple problem in closed world assumption where everything set in the init is true, everything not set is false; different predicates are used to identify the different objects like robot, customer ecc...
 	that are used in the preconditions of the actions.
 
@@ -23,6 +24,7 @@ The features highlighted are those that i cuould test through two planners:
   It has to grab an exstinguisher and a hammer (not having both in hands) and use them to achieve the task.
 
   - Problem features: strips, conditional effects, negative precondition
+
   Note: Conditional effects are "when x is true then y is true" and in this case it is used in the "break wall" action because the hammer breaks after that
 	two walls are broken. When the robot hit the wall with the hammer it is half-broken if it was never used or it becomes broken if it was half-broken.
 
@@ -32,6 +34,7 @@ The features highlighted are those that i cuould test through two planners:
 	an airport where 3 planes can load objects and fly back and forth to the cities and airport.
   
   - Problem features: strips, conditional effects, negative preconditions, typing, quantifiers
+
   Note: Typing is a useful feature that assign a type to a variable in the domain file (in market example i had to use a predicate to express the "type" of an object like (robot ?r))
 	and it can be specified the type of the variables that are in the preconditions of the actions. Another introduction wrt the previous examples 
 	are the universal quantifiers: since a vehicle can carry any type of object but it can load one at a time they are used to check if "all objects are not being carryed by the vehicle"
@@ -41,6 +44,7 @@ The features highlighted are those that i cuould test through two planners:
   Description: Same as previous problem.
 
   - Problem features: strips, conditional effects, negative preconditions, typing, quantifiers, action cost
+
   Note: here every action has a different cost, useful to plan a sequence of action considering to minimize the total cost.
 
 - 3.2) Logistic with derivative predicates
