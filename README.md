@@ -40,23 +40,23 @@ The features highlighted are those that i cuould test through two planners:
 - 3.1) Logistic with cost
   Description: Same as previous problem.
 
-	- Problem features: strips, conditional effects, negative preconditions, typing, quantifiers, action cost
-	Note: here every action has a different cost, useful to plan a sequence of action considering to minimize the total cost.
+  - Problem features: strips, conditional effects, negative preconditions, typing, quantifiers, action cost
+  Note: here every action has a different cost, useful to plan a sequence of action considering to minimize the total cost.
 
 - 3.2) Logistic with derivative predicates
   Description: Similar to previous problem but here there's no action to make true that the iron ingot is been delivered.
 
-	- Problem features: strips, conditional effects, negative preconditions, typing, quantifiers, action cost, derivative predicates
+  - Problem features: strips, conditional effects, negative preconditions, typing, quantifiers, action cost, derivative predicates
 
-	Note: Derivative predicates are a powerful and useful feature because could be used to simplify problems since i can derive that
-	if something is true then something else it is, without setting a conditional effect for every action: in this case
-	there's no more an action to set the predicate (delivered ?x) to true because i can derive that if it is in the city it has been delivered.
+  Note: Derivative predicates are a powerful and useful feature because could be used to simplify problems since i can derive that
+  	if something is true then something else it is, without setting a conditional effect for every action: in this case
+  	there's no more an action to set the predicate (delivered ?x) to true because i can derive that if it is in the city it has been delivered.
 
 - 3.2) Logistic with numbers
   Description: Similar to logistic problem
 
-	- Problem features: strips, conditional effects, negative preconditions, typing, quantifiers, action cost, numerical fluents
+  - Problem features: strips, conditional effects, negative preconditions, typing, quantifiers, action cost, numerical fluents
 
-	Note: Unfortunatly i could not test this example because the feature i implemented, numerical fluents, was not supported by the planners i tried,
+  Note: Unfortunatly i could not test this example because the feature i implemented, numerical fluents, was not supported by the planners i tried,
 	and so the problem and domain files surely have mistakes to fix, but i wanted to add it to the list because it was the first logistic problem i wrote.
 	
