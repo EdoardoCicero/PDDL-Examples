@@ -1,5 +1,8 @@
 # PDDL-Examples
 
+### UPDATE 1
+_Added PLANimator.exe (GUI)_
+
 This repository contains folders of pddl examples with this structure:
 - pddl domain
 - pddl problem
@@ -77,4 +80,6 @@ _Note_: Unfortunatly i could not test this example because the feature i impleme
 ## How to run
 You can use fast downward following the instructions from the site above or use pddl solver through planner.py.
 In console "python ./planner.py path_to_domain.pddl path_to_problem.pddl"
-	
+
+You can use also *PLANimator.exe* only on Windows and you can test only Market, Fireman and Logistic problem through the online pddl solver
+("Logistic problem with derivative predicates" requires fast downward).

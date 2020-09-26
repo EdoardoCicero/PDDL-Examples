@@ -8,3 +8,13 @@ resp = requests.post('http://solver.planning.domains/solve',
 
 for i in resp['result']['plan']:
 	print(i['name'])
+
+def dumPlan(domain_path, problem_path, name):
+
+	data = {'domain': open(domain_path, 'r').read(),
+        'problem': open(problem_path, 'r').read()}
+
+	resp = requests.post('http://solver.planning.domains/solve',verify=False, json=data).json()
+
+	for i in resp['result']['plan']:
+		print(i['name'])
