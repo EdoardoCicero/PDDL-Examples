@@ -35,8 +35,16 @@ _Conditional effect example_:<br/>
 		:effect (... (when (half-broken ?h) (broken ?h)) ...)
 	)
 <br/>
+_Negative precondition_:<br/>
 
-_Note_: Conditional effects are in the effects ahd they are like "if x is true then y is true" and in this case it is used in the "break wall" action because the hammer breaks after that
+	(:action move
+		...
+		:precondition (and ...(not (wall-between ?from ?to)) (not (wall-between ?to ?from)) ...)
+		...
+	)
+<br/>
+
+_Note_: Conditional effects are in the effects and they are like "if x is true then y is true" and in this case it is used in the "break wall" action because the hammer breaks after that
 	two walls are broken. When the robot hit the wall with the hammer and it was never used it becomes "half-broken" otherwise it becomes broken if it was already "half-broken".  
 
   
@@ -46,6 +54,16 @@ _Description_: 3 packages of mineral iron has to be transformed into iron ingots
 	an airport where 3 planes can load objects and fly back and forth to the cities and airport.
   
   - **Problem features**: strips, conditional effects, negative preconditions, typing, quantifiers
+  
+_Typing example_:<br/>
+
+	(:types
+        	iron_site
+		city - airport
+		iron_site foundry airport city - load_place
+		...
+	)
+<br/>  
 
 _Note_: Typing is a useful feature that assign a type to a variable in the domain file (in market example i had to use a predicate to express the "type" of an object like (robot ?r))
 	and it can be specified the type of the variables that are in the preconditions of the actions. Another introduction wrt the previous examples 
