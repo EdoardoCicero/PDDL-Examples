@@ -1,7 +1,7 @@
 # PDDL-Examples
 
 ### UPDATES:
-[2020/09/27] _Added examples per feature_ <br/>
+[2020/09/27] _Added example per new feature_ <br/>
 [2020/09/26] _Added PLANimator.exe (GUI)_ <br/>
 <br/>
 
