@@ -64,7 +64,6 @@ _Typing example_:<br/>
 		iron_site foundry airport city - load_place
 		...
 	)
-<br/>
 
 _Quantifier example_:<br/>
 	
