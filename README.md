@@ -1,7 +1,9 @@
 # PDDL-Examples
 
-### UPDATE 1
-_Added PLANimator.exe (GUI)_
+### UPDATES:
+[2020/09/27] _Added examples per feature_ <br/>
+[2020/09/26] _Added PLANimator.exe (GUI)_ <br/>
+<br/>
 
 This repository contains folders of pddl examples with this structure:
 - pddl domain
