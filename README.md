@@ -72,7 +72,6 @@ _Quantifier example_:<br/>
 		:precondition (and ... (forall (?object - object) (not (carry ?t ?object)) ) ...)
 		...
 	)
-<br/>
 	
 _Note_: Typing is a useful feature that assign a type to a variable in the domain file (in market example i had to use a predicate to express the "type" of an object like (robot ?r))
 	and it can be specified the type of the variables that are in the preconditions of the actions. Another introduction wrt the previous examples 
