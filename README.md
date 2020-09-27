@@ -35,7 +35,8 @@ _Conditional effect example_:<br/>
 		:effect (... (when (half-broken ?h) (broken ?h)) ...)
 	)
 <br/>
-_Negative precondition_:<br/>
+
+_Negative precondition example_:<br/>
 
 	(:action move
 		...
@@ -63,8 +64,17 @@ _Typing example_:<br/>
 		iron_site foundry airport city - load_place
 		...
 	)
-<br/>  
+<br/>
 
+_Quantifier example_:<br/>
+	
+	(:action load_truck
+		...
+		:precondition (and ... (forall (?object - object) (not (carry ?t ?object)) ) ...)
+		...
+	)
+<br/>
+	
 _Note_: Typing is a useful feature that assign a type to a variable in the domain file (in market example i had to use a predicate to express the "type" of an object like (robot ?r))
 	and it can be specified the type of the variables that are in the preconditions of the actions. Another introduction wrt the previous examples 
 	are the universal quantifiers: since a vehicle can carry any type of object but it can load one at a time they are used to check if "all objects are not being carryed by the vehicle"
@@ -74,15 +84,43 @@ _Note_: Typing is a useful feature that assign a type to a variable in the domai
 ### Logistic problem with cost
 _Description_: Same as previous problem.
 
-  - **Problem features**: strips, conditional effects, negative preconditions, typing, quantifiers, action cost
+  - **Problem features**: strips, conditional effects, negative preconditions, typing, quantifiers, functions, action cost
+  
+  
+_Functions example_:<br/>
+	
+	(:functions
+		(total-cost)
+		(drive-cost)
+		...    
+        )
+<br/>
 
-_Note_: here every action has a different cost, useful to plan a sequence of action considering to minimize the total cost.  
+_Action cost example_:<br/>
+	
+	(:action move
+		...
+		:effect (and ... (increase (total-cost) (drive-cost))) ... )
+		
+	)
+<br/>
+
+
+_Note_: functions are used to keep track of the cost, they can assume numerical values. Here every action has a different cost, useful to plan a sequence of action considering to minimize the total cost.  
 
   
 ### Logistic problem with derivative predicates
 _Description_: Similar to previous problem but here there's no action to make true that the iron ingot is been delivered.
 
   - **Problem features**: strips, conditional effects, negative preconditions, typing, quantifiers, action cost, derivative predicates
+  
+_Derivative predicate example_:<br/>
+	
+	(:derived (delivered ?o - object)
+		(and (exists (?c - city) (obj_in_place ?o ?c)))
+	)
+<br/>
+  
 
 _Note_: Derivative predicates are a powerful and useful feature because could be used to simplify problems since i can derive that
   	if something is true then something else it is, without setting a conditional effect for every action: in this case
@@ -94,8 +132,34 @@ _Description_: Similar to logistic problem
 
   - **Problem features**: strips, conditional effects, negative preconditions, typing, quantifiers, action cost, numerical fluents
 
-_Note_: Unfortunatly i could not test this example because the feature i implemented, numerical fluents, was not supported by the planners i tried,
+_Numerical fluents example_:<br/>
+	
+	(:action move
+		...
+		:precondition (and ... (> (fuel ?t) (action-cost)))
+		:effect (and ...
+				(increase (total-cost) (action-cost))
+				(decrease (fuel ?t) (action-cost)))
+	)
+	
+	...
+	
+	(:init
+		...
+		(= (capacity truck2) 100)
+		(= (fuel truck1) 100)
+		(= (fuel truck2) 100)
+		(= (obj_in_place iron1 city1) 0)
+		...
+	)
+	
+	
+<br/>
+
+
+_Note_: Unfortunately i could not test this example because the feature i implemented, numerical fluents, was not supported by the planners i tried,
 	and so the problem and domain files surely have mistakes to fix, but i wanted to add it to the list because it was the first logistic problem i wrote.
+	"Numerical fluents" introduce the possibility to assign numerical values to variables and compare them.
 	This is complex and interesting because the action "move" has a precondition over the quantity of fuel in the tank of the vehicle: in the precondition
 	there's the check of the amount of fuel, if it is less than the cost of the action to move the vehicle it cannot use that action. Of course there's
 	also another action "refuel" to refill the tank of a truck if it is at the gas station.
@@ -106,6 +170,7 @@ _Note_: Unfortunatly i could not test this example because the feature i impleme
 ## How to run
 You can use fast downward following the instructions from the site above or use pddl solver through planner.py.
 In console "python ./planner.py path_to_domain.pddl path_to_problem.pddl"
+<br/>
 
 You can use also *PLANimator.exe* only on Windows and you can test only Market, Fireman and Logistic problem through the online pddl solver
 ("Logistic problem with derivative predicates" requires fast downward).
