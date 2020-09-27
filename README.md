@@ -28,14 +28,14 @@ _Description_: A robot has to save two stuck cats in a building, put them in a s
 
   - **Problem features**: strips, conditional effects, negative precondition
 
-_Conditional effect example_:<br/><br/>
+_Conditional effect example_:<br/>
 
-	(:action break_wall<br/>
-		...<br/>
-		:effect (... (when (half-broken ?h) (broken ?h)) ...)<br/>
-	)<br/>
+	(:action break_wall
+		...
+		:effect (... (when (half-broken ?h) (broken ?h)) ...)
+	)
 <br/>
-<br/>
+
 _Note_: Conditional effects are in the effects ahd they are like "if x is true then y is true" and in this case it is used in the "break wall" action because the hammer breaks after that
 	two walls are broken. When the robot hit the wall with the hammer and it was never used it becomes "half-broken" otherwise it becomes broken if it was already "half-broken".  
 
