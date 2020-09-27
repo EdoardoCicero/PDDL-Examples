@@ -146,22 +146,23 @@ _Numerical fluents example_:<br/>
 	
 	...
 	
-	(:init
-		...
-		(= (capacity truck2) 100)
-		(= (fuel truck1) 100)
-		(= (fuel truck2) 100)
-		(= (obj_in_place iron1 city1) 0)
-		...
-	)
+	(define (problem logistic)
+		(:init
+			...
+			(= (capacity truck2) 100)
+			(= (fuel truck1) 100)
+			(= (fuel truck2) 100)
+			(= (obj_in_place iron1 city1) 0)
+			...
+		)
 	
 	
 <br/>
 
 
-_Note_: Unfortunately i could not test this example because the feature i implemented, numerical fluents, was not supported by the planners i tried,
+_Note_: "Numerical fluents" introduce the possibility to assign numerical values to variables and compare them.
+	Unfortunately i could not test this example because the feature i implemented, numerical fluents, was not supported by the planners i tried,
 	and so the problem and domain files surely have mistakes to fix, but i wanted to add it to the list because it was the first logistic problem i wrote.
-	"Numerical fluents" introduce the possibility to assign numerical values to variables and compare them.
 	This is complex and interesting because the action "move" has a precondition over the quantity of fuel in the tank of the vehicle: in the precondition
 	there's the check of the amount of fuel, if it is less than the cost of the action to move the vehicle it cannot use that action. Of course there's
 	also another action "refuel" to refill the tank of a truck if it is at the gas station.
