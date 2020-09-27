@@ -36,14 +36,13 @@ _Conditional effect example_:<br/>
 		...
 		:effect (... (when (half-broken ?h) (broken ?h)) ...)
 	)
-<<<<<<< HEAD
+
 <br/>
 _Note_: Conditional effects are in the effects ahd they are like "if x is true then y is true" and in this case it is used in the "break wall" action because the hammer breaks after that
 	two walls are broken. When the robot hit the wall with the hammer and it was never used it becomes "half-broken" otherwise it becomes broken if it was already "half-broken".  
-=======
 
 _Negative precondition example_:<br/>
->>>>>>> 5bd02c2401b2a7558293f492bc7b23d1e60dab45
+
 
 	(:action move
 		...
