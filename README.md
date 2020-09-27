@@ -175,4 +175,4 @@ In console "python ./planner.py path_to_domain.pddl path_to_problem.pddl"
 <br/>
 
 You can use also *PLANimator.exe* only on Windows and you can test only Market, Fireman and Logistic problem through the [PDDL Solver](http://solver.planning.domains/)
-("Logistic problem with derivative predicates" requires fast downward).
+("Logistic problem with derivative predicates" requires [Fast Downward](http://www.fast-downward.org/)).
